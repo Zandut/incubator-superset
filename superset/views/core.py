@@ -152,7 +152,7 @@ DATASOURCE_MISSING_ERR = __("The data source seems to have been deleted")
 USER_MISSING_ERR = __("The user seems to have been deleted")
 
 
-class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
+class Metrix(BaseSupersetView):  # pylint: disable=too-many-public-methods
     """The base views for Superset!"""
 
     logger = logging.getLogger(__name__)
@@ -248,7 +248,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
             )
         )
         if has_access_:
-            return redirect("/superset/dashboard/{}".format(dashboard_id))
+            return redirect("/metrix/dashboard/{}".format(dashboard_id))
 
         if request.args.get("action") == "go":
             for datasource in datasources:
@@ -376,7 +376,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
         _, slc = get_form_data(slice_id, use_slice_data=True)
         if not slc:
             abort(404)
-        endpoint = "/superset/explore/?form_data={}".format(
+        endpoint = "/metrix/explore/?form_data={}".format(
             parse.quote(json.dumps({"slice_id": slice_id}))
         )
         param = utils.ReservedUrlParameters.STANDALONE.value
@@ -605,7 +605,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
                 )
             )
         ):
-            url = Href("/superset/explore/")(
+            url = Href("/metrix/explore/")(
                 {
                     "form_data": json.dumps(
                         {
@@ -1271,7 +1271,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
             if o.Dashboard.created_by:
                 user = o.Dashboard.created_by
                 dash["creator"] = str(user)
-                dash["creator_url"] = "/superset/profile/{}/".format(user.username)
+                dash["creator_url"] = "/metrix/profile/{}/".format(user.username)
             payload.append(dash)
         return json_success(json.dumps(payload, default=utils.json_int_dttm_ser))
 
@@ -1416,7 +1416,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
             if o.Slice.created_by:
                 user = o.Slice.created_by
                 dash["creator"] = str(user)
-                dash["creator_url"] = "/superset/profile/{}/".format(user.username)
+                dash["creator_url"] = "/metrix/profile/{}/".format(user.username)
             payload.append(dash)
         return json_success(json.dumps(payload, default=utils.json_int_dttm_ser))
 
@@ -2447,7 +2447,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
     def search_queries(self) -> FlaskResponse:  # pylint: disable=no-self-use
         """
         Search for previously run sqllab queries. Used for Sqllab Query Search
-        page /superset/sqllab#search.
+        page /metrix/sqllab#search.
 
         Custom permission can_only_search_queries_owned restricts queries
         to only queries run by current user.
@@ -2511,6 +2511,7 @@ class Superset(BaseSupersetView):  # pylint: disable=too-many-public-methods
             500,
         )
 
+    
     @expose("/welcome")
     def welcome(self) -> FlaskResponse:
         """Personalized welcome page"""

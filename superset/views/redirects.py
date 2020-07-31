@@ -34,7 +34,7 @@ class R(BaseSupersetView):  # pylint: disable=invalid-name
     def index(self, url_id: int) -> FlaskResponse:  # pylint: disable=no-self-use
         url = db.session.query(models.Url).get(url_id)
         if url and url.url:
-            explore_url = "//superset/explore/?"
+            explore_url = "//metrix/explore/?"
             if url.url.startswith(explore_url):
                 explore_url += f"r={url_id}"
                 return redirect(explore_url[1:])

@@ -162,12 +162,12 @@ class Dashboard(  # pylint: disable=too-many-instance-attributes
                 try:
                     if json.loads(default_filters):
                         filters = parse.quote(default_filters.encode("utf8"))
-                        return "/superset/dashboard/{}/?preselect_filters={}".format(
+                        return "/metrix/dashboard/{}/?preselect_filters={}".format(
                             self.slug or self.id, filters
                         )
                 except Exception:  # pylint: disable=broad-except
                     pass
-        return f"/superset/dashboard/{self.slug or self.id}/"
+        return f"/metrix/dashboard/{self.slug or self.id}/"
 
     @property
     def datasources(self) -> Set[Optional["BaseDatasource"]]:
@@ -214,7 +214,7 @@ class Dashboard(  # pylint: disable=too-many-instance-attributes
     def changed_by_url(self) -> str:
         if not self.changed_by:
             return ""
-        return f"/superset/profile/{self.changed_by.username}"
+        return f"/metrix/profile/{self.changed_by.username}"
 
     @property
     def data(self) -> Dict[str, Any]:

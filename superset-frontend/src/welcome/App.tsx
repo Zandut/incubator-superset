@@ -66,7 +66,7 @@ const App = () => (
           <QueryParamProvider ReactRouterRoute={Route}>
             <Menu data={menu} />
             <Switch>
-              <Route path="/superset/welcome/">
+              <Route path="/metrix/welcome/">
                 <ErrorBoundary>
                   <Welcome user={user} />
                 </ErrorBoundary>

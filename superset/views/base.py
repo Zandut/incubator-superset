@@ -270,7 +270,7 @@ def menu_data() -> Dict[str, Any]:
             logger.exception(ex)
 
         if logo_target_path.startswith("/"):
-            root_path = f"/superset{logo_target_path}"
+            root_path = f"/metrix{logo_target_path}"
         else:
             root_path = logo_target_path
 

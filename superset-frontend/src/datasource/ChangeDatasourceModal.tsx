@@ -81,7 +81,7 @@ const ChangeDatasourceModal: FunctionComponent<ChangeDatasourceModalProps> = ({
     }
     if (!datasources) {
       SupersetClient.get({
-        endpoint: '/superset/datasources/',
+        endpoint: '/metrix/datasources/',
       })
         .then(({ json }) => {
           const data = json.map((ds: any) => ({

@@ -57,7 +57,7 @@ class QueryTable extends React.PureComponent {
     };
   }
   openQuery(id) {
-    const url = `/superset/sqllab?queryId=${id}`;
+    const url = `/metrix/sqllab?queryId=${id}`;
     window.open(url);
   }
   hideVisualizeModal() {

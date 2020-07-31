@@ -71,7 +71,7 @@ def create_app() -> Flask:
 class SupersetIndexView(IndexView):
     @expose("/")
     def index(self) -> FlaskResponse:
-        return redirect("/superset/welcome")
+        return redirect("/metrix/welcome")
 
 
 class SupersetAppInitializer:
@@ -144,7 +144,7 @@ class SupersetAppInitializer:
             AnnotationModelView,
         )
         from superset.views.api import Api
-        from superset.views.core import Superset
+        from superset.views.core import Metrix
         from superset.views.redirects import R
         from superset.views.key_value import KV
         from superset.views.access_requests import AccessRequestsModelView
@@ -279,7 +279,7 @@ class SupersetAppInitializer:
         appbuilder.add_view_no_menu(SqlLab)
         appbuilder.add_view_no_menu(SqlMetricInlineView)
         appbuilder.add_view_no_menu(AnnotationModelView)
-        appbuilder.add_view_no_menu(Superset)
+        appbuilder.add_view_no_menu(Metrix)
         appbuilder.add_view_no_menu(TableColumnInlineView)
         appbuilder.add_view_no_menu(TableModelView)
         appbuilder.add_view_no_menu(TableSchemaView)
@@ -294,7 +294,7 @@ class SupersetAppInitializer:
         appbuilder.add_link(
             "Import Dashboards",
             label=__("Import Dashboards"),
-            href="/superset/import_dashboards",
+            href="/metrix/import_dashboards",
             icon="fa-cloud-upload",
             category="Manage",
             category_label=__("Manage"),
@@ -303,7 +303,7 @@ class SupersetAppInitializer:
         appbuilder.add_link(
             "SQL Editor",
             label=_("SQL Editor"),
-            href="/superset/sqllab",
+            href="/metrix/sqllab",
             category_icon="fa-flask",
             icon="fa-flask",
             category="SQL Lab",
@@ -318,7 +318,7 @@ class SupersetAppInitializer:
         appbuilder.add_link(
             "Query Search",
             label=_("Query Search"),
-            href="/superset/sqllab#search",
+            href="/metrix/sqllab#search",
             icon="fa-search",
             category_icon="fa-flask",
             category="SQL Lab",

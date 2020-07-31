@@ -58,7 +58,7 @@ export function getAnnotationJsonUrl(slice_id, form_data, isNative) {
   const uri = URI(window.location.search);
   const endpoint = isNative ? 'annotation_json' : 'slice_json';
   return uri
-    .pathname(`/superset/${endpoint}/${slice_id}`)
+    .pathname(`/metrix/${endpoint}/${slice_id}`)
     .search({
       form_data: safeStringify(form_data, (key, value) =>
         value === null ? undefined : value,
@@ -74,9 +74,9 @@ export function getURIDirectory(endpointType = 'base') {
       endpointType,
     )
   ) {
-    return '/superset/explore_json/';
+    return '/metrix/explore_json/';
   }
-  return '/superset/explore/';
+  return '/metrix/explore/';
 }
 
 export function getExploreLongUrl(

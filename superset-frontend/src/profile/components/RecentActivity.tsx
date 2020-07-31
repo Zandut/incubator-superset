@@ -45,7 +45,7 @@ export default function RecentActivity({ user }: RecentActivityProps) {
         className="table table-condensed"
         mutator={mutator}
         sortable
-        dataEndpoint={`/superset/recent_activity/${user.userId}/?limit=${rowLimit}`}
+        dataEndpoint={`/metrix/recent_activity/${user.userId}/?limit=${rowLimit}`}
       />
     </div>
   );
