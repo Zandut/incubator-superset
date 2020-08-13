@@ -40,6 +40,8 @@ import MetricsControl from './MetricsControl';
 import AdhocFilterControl from './AdhocFilterControl';
 import FilterBoxItemControl from './FilterBoxItemControl';
 import withVerification from './withVerification';
+import StepsControl from './StepsControl';
+import FilterControl from './FilterControl';
 
 const controlMap = {
   AnnotationLayerControl,
@@ -80,5 +82,7 @@ const controlMap = {
     'column_name',
     'columns',
   ),
+  StepsControl,
+  FilterControl,
 };
 export default controlMap;
