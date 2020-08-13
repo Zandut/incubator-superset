@@ -78,7 +78,7 @@ PACKAGE_JSON_FILE = os.path.join(BASE_DIR, "static", "assets", "package.json")
 #     "type": "image/png"
 #     "rel": "icon"
 # },
-FAVICONS = [{"href": "/static/assets/images/favicon.png"}]
+FAVICONS = [{"href": "/static/assets/images/Metrix-01.png"}]
 
 
 def _try_json_readversion(filepath: str) -> Optional[str]:
@@ -152,7 +152,7 @@ SECRET_KEY = (
 # The SQLAlchemy connection string.
 #SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(DATA_DIR, "superset.db")
 # SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
-SQLALCHEMY_DATABASE_URI = 'postgres://administrator:B15m1ll4h@192.168.9.180:5432/dev_superset'
+SQLALCHEMY_DATABASE_URI = 'postgres://administrator:B15m1ll4h@192.168.9.180:5432/db_superset'
 
 # In order to hook up a custom password store for all SQLACHEMY connections
 # implement a function that takes a single argument of type 'sqla.engine.url',
@@ -191,10 +191,10 @@ PROXY_FIX_CONFIG = {"x_for": 1, "x_proto": 1, "x_host": 1, "x_port": 1, "x_prefi
 # GLOBALS FOR APP Builder
 # ------------------------------
 # Uncomment to setup Your App name
-APP_NAME = "Metrix"
+APP_NAME = "Metrix>"
 
 # Uncomment to setup an App icon
-APP_ICON = "/static/assets/images/superset-logo-horiz.png"
+APP_ICON = "/static/assets/images/Metrixx-06.png"
 APP_ICON_WIDTH = 126
 
 # Uncomment to specify where clicking the logo would take the user
