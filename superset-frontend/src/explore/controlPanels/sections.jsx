@@ -107,6 +107,24 @@ export const annotations = {
   ],
 };
 
+export const simpleFilter = {
+  label: t('Filters'),
+  expanded: true,
+  controlSetRows: [['filters']],
+};
+
+export const steps = {
+  label: t('Steps'),
+  description: t(
+    'Add filters and metrics for each step.' +
+    'The steps combine to tell a story.'),
+  expanded: true,
+  controlSetRows: [
+    ['funnel_steps'],
+  ],
+};
+
+
 export const NVD3TimeSeries = [
   {
     label: t('Query'),

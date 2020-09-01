@@ -31,6 +31,7 @@ import DeckScatter from '../explore/controlPanels/DeckScatter';
 import DeckScreengrid from '../explore/controlPanels/DeckScreengrid';
 import Separator from '../explore/controlPanels/Separator';
 import TimeTable from '../explore/controlPanels/TimeTable';
+import Funnel from '../explore/controlPanels/Funnel';
 
 export default function setupPlugins() {
   new MainPreset().register();
@@ -47,6 +48,7 @@ export default function setupPlugins() {
     .registerValue('deck_path', DeckPath)
     .registerValue('deck_polygon', DeckPolygon)
     .registerValue('deck_scatter', DeckScatter)
+    .registerValue('funnel', Funnel)
     .registerValue('deck_screengrid', DeckScreengrid);
 
   setupPluginsExtra();
